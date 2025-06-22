@@ -3,15 +3,21 @@
 # 1: we can import each function  sepeartely .      2: we can import all funtions at once using " * ".
 #how to import ? : see the first line of code in game.py . 
 import cv2
-def playVid(Path):
+
+def playVid(video_path):
+    cap = cv2.VideoCapture(video_path)
+
     while True:
-        cap = cv2.VideoCapture(Path)
         ret, frame = cap.read()
-        while ret:
-            cv2.imshow('Result', frame)
-            if cv2.waitKey(25) & 0xFF == ord('q'):
-                cap.release()
-                cv2.destroyAllWindows()
-                return
-            ret, frame = cap.read()
-        cap.release()
+        if not ret:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  # rewind karega
+            continue
+
+        cv2.imshow('Rock Paper Scissors - Result', frame)
+
+        if cv2.waitKey(25) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+

@@ -9,15 +9,15 @@ score = 0
 Elements = ["rock", "paper", "scissors"]
 
 Video_condition = {
-    ("rock", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-R.mp4",  
-    ("paper", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-P.mp4",
-    ("scissors", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-S.mp4",
-    ("rock", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-P.mp4",
-    ("paper", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-R.mp4",
-    ("scissors", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-R.mp4",
-    ("rock", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-S.mp4",
-    ("paper", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-S.mp4",
-    ("scissors", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-P.mp4",
+    ("rock", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-R.avi",  
+    ("paper", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-P.avi",
+    ("scissors", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-S.avi",
+    ("rock", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-P.avi",
+    ("paper", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-R.avi",
+    ("scissors", "rock"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-R.avi",
+    ("rock", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-R C-S.avi",
+    ("paper", "scissors"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-P C-S.avi",
+    ("scissors", "paper"): "A:\\Fun Projects\\Rock-Paper-Scissors\\Videos\\U-S C-P.avi",
 }
 
 print("\n============================")
@@ -27,7 +27,7 @@ print("\n=======================================================================
 print("      RULES : agr ek baar haar jao ya jeet jao tab ek video aaygi use hatane ke liye 'q' press kar dena     ")
 print("=============================================================================================================\n")
 
-# Game Loop
+
 while True:
     wanna_Play = int(input("Enter 1 to play or 0 to exit: "))
     if wanna_Play == 0:
@@ -66,7 +66,7 @@ while True:
 
                 if key in Video_condition:
                     video_path = Video_condition[key]
-                    playVid(video_path)  # no change — as you are using playVid()
+                    playVid(video_path)  
                 else:
                     print("Kuch to Gadbad Hai Dayaaaa🤔") 
 
@@ -84,4 +84,4 @@ while True:
             except sr.UnknownValueError:
                 print("Could not understand your voice ❌")
             except sr.RequestError:
-                print("Could not request results from Google API 🚫")
+                print("Could not request results from Google API 🚫")        
